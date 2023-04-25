@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% set active_page = "galery" %}
+
+{% block body_content %}
+
+<div class="w3-padding-64 w3-content" id="galery">
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Projects</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+          <a href="https://melisdem.github.io/blog/html/dark/main-pages/index.html">
+              <img src="./static/images/galeryBlog.jpg" style="width:100%">
+          </a>
+          <a href="https://github.com/melisdem/MovieSearchApp">
+              <img src="./static/images/galeryMovieSearch.jpg" style="width:100%">
+          </a>
+      </div>
+
+      <div class="w3-half">
+          <a href="https://melisdem.github.io/ColorGame.github.io/">
+              <img src="./static/images/galeryColorGame.jpg" style="width:100%">
+          </a>
+      </div>
+    <!-- End photo grid -->
+    </div>
+
+{% endblock %}

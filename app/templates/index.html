@@ -1,0 +1,85 @@
+<!--Base.html sayfasında bahsettiğimiz jinja2 ile bu parent sayfadaki içeriği aynen bu sayfada kullanabiliyoruz.-->
+<!--bu parent sayfayı çağırabilmek için aşağıdaki <em>extends</em> syntax'ını kullanıyoruz.-->
+
+{% extends 'base.html' %}
+
+{% set active_page = "index" %}
+
+<!--İskelet oluşturduğumuzda jinja2 tüm html sayfasını bizim için bloklara ayırıyor.-->
+<!--aşağıdaki gibi bloğu body_content olarak belirtip, içeriğini dolduruyoruz.-->
+<!--parentta da body_content'e yer ayırmıştık.-->
+<!--Jinja2 öncelikle base.html dosyasını yüklüyor, -->
+<!--block elemanına geldiğinde index.html olan child sayfamızdan -->
+<!--bu block elemanının içindeki html kodunu da oraya eklemiş oluyor.-->
+
+{% block body_content %}
+  <!-- Header/Home -->
+  <header class="w3-container w3-padding-32 w3-center {{ 'w3-white' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-black' }}" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Melis Demir.</h1>
+    <p>Web Developer.</p>
+    <p style="font-size:65%">(trying to be...)</p>
+    <img src="./static/images/me.jpeg" alt="boy" class="w3-image" width="300" height="500">
+  </header>
+
+  <!-- About Section -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">About</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>I graduated from METU Mathematics Department and then I got married and started working as a banker.</p>
+    <p>After working for 2 years in the finance sector, I realized my expectations for a lifetime job are different. I had very low-quality life standards; not financially but regarding my mental satisfaction. Then I quit my job and started looking for a new sector.</p>
+    <p>Since my university years, I like coding and design, so I have looked for web development courses. I have been studying this topic via Udemy courses and Youtube videos. But, I have waited up until I have been sure that this is what I want for the rest of my life. Now, I feel confident about my extensible knowledge of web developing and enthusiasm for such a career. Since then, I have educated myself. I have been trying to research and learn by myself. When I realize I enjoy learning, thinking and producing about web developing and examining about designing and style, I decided that this is my passion and I have to chase it.</p>
+    <h3 class="w3-padding-16 {{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">My Skills</h3>
+    <p class="w3-wide">HTML</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+    </div>
+    <p class="w3-wide">CSS</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:75%"></div>
+    </div>
+    <p class="w3-wide">Javascript</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:60%"></div>
+    </div><br>
+    <p class="w3-wide">Python</p>
+    <div class="w3-white">
+      <div class="w3-dark-grey" style="height:28px;width:20%"></div>
+    </div><br>
+
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <a href="https://github.com/melisdem" target="_blank"><i class="fa fa-github"></i> Github</a>
+    </button>
+    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+      <a href="https://www.linkedin.com/in/melis-demir-yunuak/" target="_blank"><i class="fa fa-linkedin"></i> Linkedin</a>
+    </button>
+
+  <!-- End About Section -->
+  </div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-padding-64 w3-content" id="photosasd">
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Photos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Grid for photos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <img src="./static/images/photo.jpeg" style="width:100%">
+        <img src="./static/images/devrim.jpeg" style="width:100%">
+        <img src="./static/images/pencere.jpeg" style="width:100%">
+        <img src="./static/images/kale.jpeg" style="width:100%">
+      </div>
+
+      <div class="w3-half">
+        <img src="./static/images/dedem.jpeg" style="width:100%">
+        <img src="./static/images/ağaç.jpeg" style="width:100%">
+        <img src="./static/images/orman.jpeg" style="width:100%">
+        <img src="./static/images/arch.jpeg" style="width:100%">
+      </div>
+    <!-- End photo grid -->
+    </div>
+  <!-- End Portfolio Section -->
+  </div>
+
+<!--block elemanının nerede bittiğini bize gösteriyor.-->
+{% endblock %}

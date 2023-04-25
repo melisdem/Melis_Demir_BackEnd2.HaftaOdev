@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% set active_page = "login" %}
+
+{% block body_content %}
+
+  <!-- Login Section -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Login</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <form action="" method="POST">
+      <p>
+        <label for="username" class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}"><b>Username</b></label>
+        <input id="username" class="w3-input w3-padding-16" type="text" placeholder="Please enter your Username" required name="username">
+      </p>
+      <p>
+        <label for="password" class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}"><b>Password</b></label>
+        <input id="password" class="w3-input w3-padding-16" type="password" placeholder="Please enter your Password" required name="password">
+      </p>
+      <br>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
+          <i class="fa fa-sign-in"></i> SIGN IN
+        </button>
+      </p>
+    </form>
+  <!-- End Login Section -->
+  </div>
+
+{% endblock %}

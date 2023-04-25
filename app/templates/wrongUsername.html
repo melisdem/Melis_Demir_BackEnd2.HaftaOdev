@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% set active_page = "" %}
+
+{% block body_content %}
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="">
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Your username or password is incorrect.</h2>
+    <hr style="width:300px" class="w3-opacity">
+    <a href="{{ url_for('Login') }}" class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">
+      <h3 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Please try again </h3>
+    </a>
+</div>
+
+{% endblock %}

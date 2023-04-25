@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% set active_page = "login" %}
+
+{% block body_content %}
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="">
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">You are logged out!</h2>
+    <hr style="width:300px" class="w3-opacity">
+    <a href="{{ url_for('Index') }}" class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">You can go back to home page </a>
+</div>
+
+{% endblock %}

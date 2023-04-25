@@ -1,0 +1,15 @@
+
+{% extends 'base.html' %}
+
+{% set active_page = "contact" %}
+
+{% block body_content %}
+
+<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="">
+    <h1 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Hello {{ name }} </h1>
+    <h2 class="{{ 'w3-text-grey' if request.cookies.get('theme') == 'w3-white.TfZOHrNrjfzqp9fOY3iwOFhoOgI' else 'w3-text-light-grey' }}">Thank you for your message!</h2>
+    <hr style="width:300px" class="w3-opacity">
+    <p>I will try to get back to your message as soon as possible.</p>
+</div>
+
+{% endblock %}
